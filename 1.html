@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let examScores = [100, 84, 78, 99, 98, 100, 68, 73, 77, 67];
+    let result = 0;
+
+    function thirdHighestScore() {
+        for (let i = 0; i < examScores.length; i++) {
+            for (let j = i + 1; j < examScores.length; j++) {
+                if (examScores[i] > examScores[j]) {
+                    result = examScores[j];
+                    examScores[j] = examScores[i];
+                    examScores[i] = result;
+                }
+            }
+        }
+        let thirdHighest = examScores[examScores.length - 3];
+        return thirdHighest;
+    }
+
+    let score = thirdHighestScore();
+    document.write("The third highest score is: " + result);
+</script>
+</body>
+</html>
